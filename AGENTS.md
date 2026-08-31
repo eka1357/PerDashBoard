@@ -15,7 +15,7 @@ A modular, high-performance, and visually stunning personal dashboard built with
   ```text
   src/
   ├── components/
-  │   ├── common/             # Navbar, ThemeSelector, CommandPalette, SettingsDrawer, WidgetCard
+  │   ├── common/             # Navbar, ThemeSelector, CommandPalette, SettingsDrawer, WidgetCard, WidgetGrid
   │   └── widgets/            # Self-contained feature modules
   │       ├── Weather/        # Live conditions, forecasts, city search
   │       ├── Todos/          # Priority tasks, subtasks, categories, progress
@@ -45,14 +45,14 @@ Every widget must adhere to the following contract:
 
 ## Development Milestones & Roadmap
 - [x] **Milestone 1:** Project specification, architecture contract, and repository setup.
-- [ ] **Milestone 2:** Vite + Tailwind CSS project initialization with glassmorphism design system.
-- [ ] **Milestone 3:** Common layout, responsive Navbar, Theme Engine (6 presets), and Command Palette (Ctrl+K).
-- [ ] **Milestone 4:** Custom state hooks (`useLocalStorage`, `useSoundscape`, `useKeyboardShortcut`) and Dynamic Widget Grid.
-- [ ] **Milestone 5:** Weather widget with live forecast, city search, and animated conditions.
-- [ ] **Milestone 6:** Todo & Task Planner widget with categories, priority flags, and confetti.
-- [ ] **Milestone 7:** Habit Tracker widget with streak counters and contribution heatmap.
-- [ ] **Milestone 8:** Pomodoro Focus Timer with circular progress ring and synthesized ambient sounds.
-- [ ] **Milestone 9:** Daily Quotes & Wisdom widget with categories and favorites.
-- [ ] **Milestone 10:** Dev QuickLinks hub and Markdown Scratchpad with live preview.
-- [ ] **Milestone 11:** Wellness (Water & Breathing) tracker and Crypto Market ticker.
-- [ ] **Milestone 12:** Settings drawer, JSON data backup & restore, and final UI polish.
+- [x] **Milestone 2:** Vite + Tailwind CSS project initialization with glassmorphism design system.
+- [x] **Milestone 3:** Common layout, responsive Navbar, Theme Engine (6 presets), and Command Palette (Ctrl+K).
+- [x] **Milestone 4:** Custom state hooks (`useLocalStorage`, `useSoundscape`, `useKeyboardShortcut`) and Dynamic Widget Grid.
+- [x] **Milestone 5:** Weather widget with live forecast, city search, and animated conditions.
+- [x] **Milestone 6:** Todo & Task Planner widget with categories, priority flags, and confetti.
+- [x] **Milestone 7:** Habit Tracker widget with streak counters and contribution heatmap.
+- [x] **Milestone 8:** Pomodoro Focus Timer with circular progress ring and synthesized ambient sounds.
+- [x] **Milestone 9:** Daily Quotes & Wisdom widget with categories and favorites.
+- [x] **Milestone 10:** Dev QuickLinks hub and Markdown Scratchpad with live preview.
+- [x] **Milestone 11:** Wellness (Water & Breathing) tracker and Crypto Market ticker.
+- [x] **Milestone 12:** Settings drawer, JSON data backup & restore, and final UI polish.

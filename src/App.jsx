@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/common/Navbar';
 import CommandPalette from './components/common/CommandPalette';
+import SettingsDrawer from './components/common/SettingsDrawer';
 import WidgetGrid from './components/common/WidgetGrid';
 import WidgetCard from './components/common/WidgetCard';
 import WeatherWidget from './components/widgets/Weather/WeatherWidget';
@@ -27,7 +28,7 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  // Global keyboard shortcut
+  // Global keyboard shortcut (Cmd+K / Ctrl+K)
   useEffect(() => {
     const handleKeyDown = (e) => {
       if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
@@ -47,6 +48,7 @@ export default function App() {
 
   const handleResetLayout = () => {
     setWidgets(DEFAULT_WIDGET_CONFIGS);
+    setTheme('midnight');
   };
 
   const activeWidgetCount = widgets.filter((w) => w.enabled).length;
@@ -114,6 +116,19 @@ export default function App() {
         onSelectTheme={setTheme}
         onOpenSettings={() => setIsSettingsOpen(true)}
         onResetLayout={handleResetLayout}
+      />
+
+      {/* Settings Drawer */}
+      <SettingsDrawer
+        isOpen={isSettingsOpen}
+        onClose={() => setIsSettingsOpen(false)}
+        userName={userName}
+        onUpdateUserName={setUserName}
+        currentTheme={theme}
+        onSelectTheme={setTheme}
+        widgets={widgets}
+        onToggleWidget={handleToggleWidget}
+        onResetDashboard={handleResetLayout}
       />
     </div>
   );
