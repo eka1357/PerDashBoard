@@ -6,6 +6,7 @@ import WidgetCard from './components/common/WidgetCard';
 import WeatherWidget from './components/widgets/Weather/WeatherWidget';
 import TodoWidget from './components/widgets/Todos/TodoWidget';
 import HabitWidget from './components/widgets/Habits/HabitWidget';
+import PomodoroWidget from './components/widgets/Pomodoro/PomodoroWidget';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { DEFAULT_WIDGET_CONFIGS } from './utils/constants';
 import { Clock } from 'lucide-react';
@@ -54,6 +55,8 @@ export default function App() {
         return <TodoWidget />;
       case 'habits':
         return <HabitWidget />;
+      case 'pomodoro':
+        return <PomodoroWidget />;
       default:
         return null;
     }
