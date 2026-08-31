@@ -4,9 +4,10 @@ import CommandPalette from './components/common/CommandPalette';
 import WidgetGrid from './components/common/WidgetGrid';
 import WidgetCard from './components/common/WidgetCard';
 import WeatherWidget from './components/widgets/Weather/WeatherWidget';
+import TodoWidget from './components/widgets/Todos/TodoWidget';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { DEFAULT_WIDGET_CONFIGS } from './utils/constants';
-import { Sparkles, Clock, Activity } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 export default function App() {
   const [theme, setTheme] = useLocalStorage('perdash_theme', 'midnight');
@@ -48,6 +49,8 @@ export default function App() {
     switch (widgetId) {
       case 'weather':
         return <WeatherWidget />;
+      case 'todos':
+        return <TodoWidget />;
       default:
         return null;
     }
@@ -67,7 +70,6 @@ export default function App() {
 
       {/* Main Grid View */}
       <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full">
-        {/* Dynamic Widget Grid Container */}
         <WidgetGrid>
           {widgets.filter((w) => w.enabled).map((widget) => {
             const widgetContent = renderWidgetContent(widget.id);
