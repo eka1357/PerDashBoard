@@ -10,9 +10,10 @@ import PomodoroWidget from './components/widgets/Pomodoro/PomodoroWidget';
 import QuotesWidget from './components/widgets/Quotes/QuotesWidget';
 import QuickLinksWidget from './components/widgets/QuickLinks/QuickLinksWidget';
 import NotesWidget from './components/widgets/Notes/NotesWidget';
+import WellnessWidget from './components/widgets/Wellness/WellnessWidget';
+import CryptoTickerWidget from './components/widgets/CryptoTicker/CryptoTickerWidget';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { DEFAULT_WIDGET_CONFIGS } from './utils/constants';
-import { Clock } from 'lucide-react';
 
 export default function App() {
   const [theme, setTheme] = useLocalStorage('perdash_theme', 'midnight');
@@ -66,6 +67,10 @@ export default function App() {
         return <QuickLinksWidget />;
       case 'notes':
         return <NotesWidget />;
+      case 'wellness':
+        return <WellnessWidget />;
+      case 'crypto':
+        return <CryptoTickerWidget />;
       default:
         return null;
     }
@@ -88,28 +93,11 @@ export default function App() {
         <WidgetGrid>
           {widgets.filter((w) => w.enabled).map((widget) => {
             const widgetContent = renderWidgetContent(widget.id);
-
-            if (widgetContent) {
-              return (
-                <div key={widget.id} className={widget.colSpan || 'col-span-1 md:col-span-2'}>
-                  {widgetContent}
-                </div>
-              );
-            }
+            if (!widgetContent) return null;
 
             return (
               <div key={widget.id} className={widget.colSpan || 'col-span-1 md:col-span-2'}>
-                <WidgetCard
-                  id={widget.id}
-                  title={widget.name}
-                  badge={widget.category}
-                  badgeVariant="neutral"
-                >
-                  <div className="py-8 text-center text-sm text-theme-text-muted">
-                    <Clock className="w-8 h-8 mx-auto mb-2 text-theme-primary/30" />
-                    <span>Module '{widget.name}' will bolt on next.</span>
-                  </div>
-                </WidgetCard>
+                {widgetContent}
               </div>
             );
           })}
