@@ -4,7 +4,7 @@ import ThemeSelector from './ThemeSelector';
 import { formatTime, formatDate, getGreeting } from '../../utils/formatters';
 
 export default function Navbar({
-  userName = 'Maker',
+  userName = 'Eka Vardhan',
   theme,
   onThemeChange,
   onOpenCommandPalette,

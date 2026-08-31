@@ -18,7 +18,7 @@ import { DEFAULT_WIDGET_CONFIGS } from './utils/constants';
 
 export default function App() {
   const [theme, setTheme] = useLocalStorage('perdash_theme', 'midnight');
-  const [userName, setUserName] = useLocalStorage('perdash_username', 'Mahin');
+  const [userName, setUserName] = useLocalStorage('perdash_username', 'Eka Vardhan');
   const [widgets, setWidgets] = useLocalStorage('perdash_widgets', DEFAULT_WIDGET_CONFIGS);
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
